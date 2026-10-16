@@ -1,0 +1,21 @@
+# Secrets
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Internal Tech Lounge documents (kept local, not committed)
+*.xlsx
+~$*.xlsx
+kb_data/
+
+# Python tooling
+.pytest_cache/
+
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/next-env.d.ts
+

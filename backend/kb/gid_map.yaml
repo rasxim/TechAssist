@@ -1,0 +1,48 @@
+# Google Sheets tab IDs (gid) -> tab name in the local workbook.
+#
+# Some Common Questions answers link to the online copy of the cheat sheet by tab ID
+# instead of linking to the tab itself. The .xlsx does not record which tab a gid is,
+# so this mapping is maintained by hand. Only `confirmed: true` entries are followed.
+#
+# evidence: why we believe the mapping. Flip `confirmed` to true after checking the
+# link in the online sheet.
+
+spreadsheet_id: 1FC5PrifMuvQhPEkHksZlwSE6FrmVzIBPpC_Jvs99ezY
+
+gids:
+  "2129221930":
+    tab: Public Lab Printers
+    confirmed: true
+    evidence: Common Questions!B2 shows this gid URL and its hyperlink points to the tab
+  "700145938":
+    tab: Software Available for Download
+    confirmed: true
+    evidence: Common Questions!B29 shows this gid URL and its hyperlink points to the tab
+  "1613948933":
+    tab: Equipment Loan Information
+    confirmed: true
+    evidence: Common Questions!B45 shows this gid URL and its hyperlink points to the tab
+  "1613200761":
+    tab: MAC Addresses for Smart Devices
+    confirmed: false
+    evidence: inferred from question A8 (MAC address of smart devices)
+  "655270093":
+    tab: eduroam macOS Versions
+    confirmed: false
+    evidence: inferred from question A12 (macOS/iOS versions for eduroam)
+  "1090180532":
+    tab: BIOS Boot Info
+    confirmed: false
+    evidence: inferred from questions A38 and A39 (BIOS / boot menu / diagnostics)
+  "1852883518":
+    tab: Warranty Lookups for Common Bra
+    confirmed: false
+    evidence: inferred from question A40 (warranty status)
+  "256284430":
+    tab: Personal Device Data Transfer
+    confirmed: false
+    evidence: inferred from question A43 (data transfer)
+  "1326378471":
+    tab: Erase Lafayette Computers
+    confirmed: false
+    evidence: inferred from question A49 (securely erase a retired device)

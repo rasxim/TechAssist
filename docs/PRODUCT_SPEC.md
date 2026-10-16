@@ -166,7 +166,7 @@ Given that mix, retrieval should be **hybrid by content type**, not one single t
 
 - Natural-language questions → semantic and/or keyword/hybrid search, returning the most relevant approved entry. At this size (~50 short Q&A rows) this likely does not need embeddings infrastructure — simple keyword/fuzzy scoring should be tried first, with embeddings only added if that proves insufficient.
 - Structured tables → deterministic lookups (e.g. match brand/device name directly), not semantic search.
-- Link-only rows → treated as an index/routing layer for V1: surface the topic and the link as-is, don't fetch or scrape the linked page. If the linked documents become available as content later, they can become retrievable sources in their own right.
+- Link-only rows → the linked documentation is ingested into the knowledge base (verbatim sections, source URL, retrieval date) so employees never need to open the external page. Public pages are fetched; restricted Google Docs are exported manually by an authorized employee. Links found inside the workbook's other tabs are recorded but not followed. The cheat sheet wins any conflict. Full design: `docs/KB_PLAN.md`.
 
 The simplest reliable retrieval approach should be preferred, and do not blindly stringify the whole workbook into fixed-size chunks and embed everything — that ignores the structure that's actually there.
 
@@ -284,7 +284,7 @@ State transitions should primarily be controlled by application logic. The LLM s
 
 - **Backend:** Python, FastAPI
 - **Frontend:** Next.js, React
-- **Database:** Supabase / PostgreSQL if persistent storage becomes necessary
+- **Database:** Supabase / PostgreSQL (knowledge base, plus a minimal per-case record with no client details; tickets are not stored)
 - **LLM:** Currently experimenting with Groq; current model while learning is `openai/gpt-oss-20b`
 - **Env:** `GROQ_API_KEY` via `python-dotenv` or equivalent; never hardcode secrets; never commit `.env` files
 - Slack integration will come later
